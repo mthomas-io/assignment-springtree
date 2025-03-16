@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org) project using Shadcn UI..
+This is a [Next.js](https://nextjs.org) project using Shadcn UI.
 
 ## Getting Started
 
@@ -33,5 +33,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - [x] Keep filter state in URL
 - [x] If filtering, make search field required to demo validation using useActionState hook
 - [x] Add details page for breed, paginate cat images of that breed
-- [ ] Add voting on details page
-- [ ] Change pagination to infinite scroll?
+- [x] Add voting on details page
+- [ ] Fetch number of existing votes
+- [ ] List breed details

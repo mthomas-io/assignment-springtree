@@ -46,10 +46,6 @@ export default function BreedFilterForm({ countries }: Props) {
     const origin = formData.get("origin") as string;
     const search = formData.get("search") as string;
 
-    if (origin && !search) {
-      errors.search = "A search query is required!";
-    }
-
     // Check if any errors exist
     if (Object.keys(errors).length > 0) {
       console.log("returning errors");
@@ -58,7 +54,6 @@ export default function BreedFilterForm({ countries }: Props) {
       };
     }
 
-    // Since our formdata contains only strings, it can be passed as SearchParams directly
     const newSearchParams = new URLSearchParams();
 
     if (origin) {
