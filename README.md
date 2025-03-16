@@ -15,6 +15,12 @@ This uses Tailwind 4/ React 19, opt for --legacy-peer-deps if asked as we use th
 npm install
 ```
 
+Set your cat API key in a root .env file
+
+```bash
+CAT_API_KEY=your-cat-api-key
+```
+
 
 then run the development server:
 
