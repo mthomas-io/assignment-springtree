@@ -2,17 +2,18 @@ import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 
 type Props = {
-  value: string;
+  id: string;
   name: string;
+  value: string;
   error?: string;
 };
 
-export default function SearchBox({ value, name, error }: Props) {
+export default function SearchBox({ id, name, value, error }: Props) {
   return (
     <div className="space-y-1">
       <Label htmlFor="search-input">Search</Label>
       <Input
-        id="search-input"
+        id={id}
         name={name}
         type="text"
         defaultValue={value}

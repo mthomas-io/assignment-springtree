@@ -93,6 +93,7 @@ export default function BreedFilterForm({ countries }: Props) {
         </div>
         <div className="flex-1">
           <SearchBox
+            id="search-input"
             name="search"
             value={searchParams.get("search") ?? ""}
             error={state?.errors.search}
