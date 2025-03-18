@@ -2,7 +2,15 @@
 
 import { cookies } from "next/headers";
 
-export async function action(prevState: any, formData: FormData) {
+type FormState = {
+  success: boolean;
+  message: string;
+};
+
+export async function action(
+  prevState: FormState | undefined,
+  formData: FormData
+) {
   const cookieStore = await cookies();
   const username = formData.get("username") as string;
 

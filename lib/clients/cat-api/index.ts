@@ -6,6 +6,8 @@ const API_BASE_URL = "https://api.thecatapi.com/v1";
 
 const catCall = async <T>(endpoint: string) => {
   const data = await fetch(`${API_BASE_URL}${endpoint}`, {
+    // force-cache everything by default for now
+    // To do: configurable as we don't want votes/ favorites endpoints always to be cached
     cache: "force-cache",
     headers: new Headers({
       "Content-Type": "application/json",
@@ -32,7 +34,7 @@ export const getBreed = async (breedId: string) => {
   return catCall<ApiBreed>(`/breeds/${breedId}`).then(({ data }) => data);
 };
 
-export const getBreedCats = async (breedId: string, page: number = 0) => {
+export const getBreedCatImages = async (breedId: string, page: number = 0) => {
   return catCall<ApiCatImage[]>(
     `/images/search?size=med&mime_types=jpg&format=json&order=ASC&limit=6&page=${page}&breed_ids=${breedId}`
   );

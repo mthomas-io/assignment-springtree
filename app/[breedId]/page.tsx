@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getBreed, getBreedCats } from "@/lib/clients/cat-api";
+import { getBreed, getBreedCatImages } from "@/lib/clients/cat-api";
 import {
   Pagination,
   PaginationContent,
@@ -29,7 +29,7 @@ export default async function BreedPage({
   const page = +((await searchParams)?.page ?? "1");
 
   const breed = await getBreed(breedId);
-  const catImages = await getBreedCats(breedId, page - 1);
+  const catImages = await getBreedCatImages(breedId, page - 1);
 
   return (
     <>
